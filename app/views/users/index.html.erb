@@ -1,0 +1,36 @@
+<% if admin_signed_in? %>
+
+	<%= link_to "Create User", new_user_registration_path %>
+
+
+	<%= form_tag users_path, :method => 'get' do %>
+	  <p>
+	    <%= text_field_tag :search, params[:search] %>
+	    <%= submit_tag "Search", :name => nil %>
+	  </p>
+	<% end %>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Email</th>
+	      <th scope="col">Name</th>
+	      <th scope="col">Phone No.</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+		    <% @users.each_with_index do |user, i| %>
+	    <tr>
+		      <th scope="row"><%= i + 1 %></th>
+		      <td><%= user.email%></td>
+		      <td><%= user.name %></td>
+		      <td>@<%= user.phone_number %></td>
+	    </tr>
+		    <% end %>  
+	  </tbody>
+	</table>
+	<%= link_to "Log out ", destroy_admin_session_path, method: :delete, class: "text-right" %>
+<% else %>
+	<%= link_to "Admin Login", new_admin_session_path %>
+<% end %>	
