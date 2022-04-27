@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>User Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
@@ -25,12 +25,7 @@
 
   <div>
      <%= f.label :dob %><br />
-     <%= f.text_field :dob, autofocus: true %>
-  </div>
-
-  <div>
-     <%= f.label :points %><br />
-     <%= f.text_field :points, autofocus: true %>
+     <%= f.date_field :dob, autofocus: true %>
   </div>
 
   <div class="field">
