@@ -1,24 +1,25 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Loyalty App
 
 Things you may want to cover:
 
 * Ruby version
+    ruby 2.5.3
 
-* System dependencies
+* Rails version
+    Rails 5.2.7
 
-* Configuration
 
-* Database creation
+* Gem install
+	`bundle install`
 
-* Database initialization
+* Create Database
+	`rails db:create`
+	`rails db:migrate`
+	`rails db:seed`
 
-* How to run the test suite
+* To run rails server
+	rails s
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+* To run rails test case
+	rails test
